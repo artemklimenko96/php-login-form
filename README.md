@@ -10,3 +10,4 @@ The database name is "credentials", table name is "users". All the connection da
 
 ## Some technical information
 Email validation is done through PHP's filter_var() function. Password is encrypted via SHA1 before being stored in database for a better security. Using prepared statements, generated through $mysqli->prepare() in order to protect from MySQL injections. 
+All the database connection data is outsoursed into a separate file "dbconnect.php".
