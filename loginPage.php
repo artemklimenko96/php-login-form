@@ -23,23 +23,20 @@
     <div class="container">
         <div class = "row">
            <div class="center">
-      <form class="form-signin" action="register.php" method="post" name="r_form" >
-        <h2 class="form-signin-heading">Please sign up</h2>
+      <form class="form-signin" action="login.php" method="post" name="r_form" >
+        <h2 class="form-signin-heading">Please Log-in</h2>
         <label for="inputEmail" class="sr-only"> Email address</label>
           <?php if(isset($_GET['email']) && $_GET['email']== 1 ){
-           echo '<span class="text-muted alert-danger">Please enter valid email </span>';
-        }else if(isset($_GET['email']) && $_GET['email']== 2 ){
-            echo '<span class="text-muted alert-danger">This email address is already registered</span>';
-        } 
-
+           echo '<span class="text-muted alert-danger">Your email or password is wrong </span>';
+        }
         ?>
 
         <input type="text" id="inputEmail" name = "r_email" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" name="r_password" class="form-control" placeholder="Password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" name="r_send">Sign up</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="r_send">Sign in</button>
       </form>
-      <p><a href = "loginPage.php">Already have an account? Log in</a></p>
+      <p><a href = "index.php">Don't' have an account yet? Sign up</a></p>
             </div>
         </div>
     </div> <!-- /container -->
