@@ -1,33 +1,13 @@
 # php-login-form
-A simple php login form with email validation and a database connection
-## Synopsis
-
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
-
-## Code Example
-
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+A simple php login form which saves validated emails and enctypted passwords into a MySQL database.
 
 ## Motivation
-
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+This project is intended as a solution for a test assignment from LianaTech for a position of a back-end developer.
 
 ## Installation
+Find database export files in a "database" folder. The database contains two columns - "email and password", email is a Primary Key.
+The database name is "credentials", table name is "users". All the connection data is stored in "dbconnect.php" file. Deploy the database and allocate the folder on an apache server. Use of XAMPP is recommended.
 
-Provide code examples and explanations of how to get the project.
-
-## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-## Tests
-
-Describe and show how to run the tests with code examples.
-
-## Contributors
-
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
+## Some technical information
+Email validation is done through PHP's filter_var() function. Password is encrypted via SHA1 before being stored in database for a better security. Using prepared statements, generated through $mysqli->prepare() in order to protect from MySQL injections. 
+All the database connection data is outsoursed into a separate file "dbconnect.php".
